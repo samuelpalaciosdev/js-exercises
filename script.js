@@ -2,9 +2,9 @@ const rapid = (string) => {
   let consonants = [];
   string = string.toLowerCase();
 
-  for (let i = 0; i < string.length; i++) {
-    if (['a', 'e', 'i', 'o', 'u'].includes(string[i]) === false) {
-      consonants.push(string[i].toUpperCase());
+  for (let letter of string) {
+    if (['a', 'e', 'i', 'o', 'u'].includes(letter) === false) {
+      consonants.push(letter.toUpperCase());
     }
   }
 
