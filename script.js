@@ -1,15 +1,11 @@
-const rapid = (string) => {
-  let consonants = [];
-  string = string.toLowerCase();
+/* 
+Please add 10 years to the value of the age variable.
 
-  for (let letter of string) {
-    if (['a', 'e', 'i', 'o', 'u'].includes(letter) === false) {
-      consonants.push(letter.toUpperCase());
-    }
-  }
+Print the result to the console.
+*/
 
-  return consonants.join('');
-};
-// Work above this line; do not change code below
-let str = 'John';
-console.log(rapid(str));
+var age = parseInt(prompt('What is your age?'));
+
+age += 10;
+
+console.log(age);
