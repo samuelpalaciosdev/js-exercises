@@ -1,11 +1,9 @@
 /* 
-Please add 10 years to the value of the age variable.
-
-Print the result to the console.
+Create a function called generateRandom(), which generates a 
+pseudo-random number between 0 and 9 every time it is called.
 */
 
-var age = parseInt(prompt('What is your age?'));
-
-age += 10;
-
-console.log(age);
+function generateRandom() {
+  const randomNum = Math.floor(Math.random() * 10);
+  return randomNum;
+}
