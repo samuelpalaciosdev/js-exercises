@@ -1,28 +1,11 @@
-const calcTip = function (bill) {
-  return bill >= 50 && bill <= 300 ? bill * 0.15 : bill * 0.2;
-};
+const maxTemps = [17, 21, 23];
 
-const bills = [22, 295, 176, 440, 37, 105, 10, 1100, 86, 52];
-
-const tips = [];
-
-const totals = [];
-
-for (let i = 0; i < bills.length; i++) {
-  const tip = calcTip(bills[i]);
-  tips.push(tip);
-  totals.push(tip + bills[i]);
-}
-
-const calcAverage = function (arr) {
-  let sum = 0;
-
+const printForecast = function (arr) {
+  let str = '';
   for (let i = 0; i < arr.length; i++) {
-    sum += arr[i];
+    str += `${arr[i]}ºC in ${i + 1} days... `;
+    console.log(str);
   }
-
-  let avg = sum / arr.length;
-  return avg;
 };
 
-console.log(calcAverage(totals)); // 275.19
+printForecast(maxTemps); // 17ºC in 1 days... 21ºC in 2 days... 23ºC in 3 days...
