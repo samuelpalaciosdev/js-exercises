@@ -1,56 +1,60 @@
 /* 
+# `23` Bottles of Milk 
 
+Have you heard the song about 99 bottles of milk? It is a great song - not boring at all... 😆 
 
-# `22` The Beatles 
-
-Who doesn't like The Beatles? A BBC study reported that 90% of kids today don't 
-know the band. Heartbreaking... :worried:
-
-Below is the chorus of one of the most famous Beatles songs, *Let It Be*:
-
-> Let it be, let it be, let it be, let it be
-
-> Whisper words of wisdom
-
-> Let it be
+Here you can hear it: https://www.youtube.com/watch?v=Xy-da43E6Lo
 
 ## 📝 Instructions:
 
-1. Create a function called `sing()` that returns a string with the exact same
- lyrics which you can hear from the 3:10 mark to the end of the song at 3:54. 
+1. Write an algorithm to print the exact same lyrics. You must use a for loop.
 
-## Example output: 
+## Expected output:
 
 ```js
-`let it be, let it be, let it be, let it be, whisper words of wisdom, let it be,
- let it be, let it be, let it be, let it be, there will be an answer, let it be`
+`99 bottles of milk on the wall, 99 bottles of milk.` 
+`Take one down and pass it around, 98 bottles of milk on the wall.`
+
+`98 bottles of milk on the wall, 98 bottles of milk.`
+`Take one down and pass it around, 97 bottles of milk on the wall.`
+
+...
+
+`1 bottle of milk on the wall, 1 bottle of milk.`
+`Take one down and pass it around, no more bottles of milk on the wall.`
+
+`No more bottles of milk on the wall, no more bottles of milk.` 
+`Go to the store and buy some more, 99 bottles of milk on the wall.`
 ```
 
-## 💡 Hints:
+## 💡 Hint:
 
-+ The words `let it be` are repeated in the string. Creating a loop would be a good idea.
++ The lyrics change slightly when there is one bottle left (singular instead of plural).
 
-+ Aquí está la canción: (https://www.youtube.com/watch?v=QDYfEBY9NM4)
++ When there are no more bottles, the last verse changes to `go to the store and by some more`.
 
 */
 
-function sing() {
-  let newStr = '';
-
-  for (let i = 1; i <= 12; i++) {
-    if (i == 5) {
-      newStr += 'whisper words of wisdom, ';
-    } else if (i == 11) {
-      newStr += 'there will be an answer, ';
-    } else if (i == 12) {
-      newStr += 'let it be';
+function bottlesOfMilk() {
+  for (let i = 99; i >= 0; i--) {
+    if (i == 1) {
+      console.log(
+        `${i} bottle of milk on the wall, ${i} bottle of milk. Take one down and pass it around, no more bottles of milk on the wall.`
+      );
+    } else if (i == 0) {
+      console.log(
+        'No more bottles of milk on the wall, no more bottles of milk. Go to the store and buy some more, 99 bottles of milk on the wall.'
+      );
+    } else if (i == 2) {
+      console.log(
+        `${i} bottles of milk on the wall, ${i} bottles of milk. Take one down and pass it around, ${i - 1} bottle of milk on the wall.`
+      );
     } else {
-      newStr += 'let it be, ';
+      console.log(
+        `${i} bottles of milk on the wall, ${i} bottles of milk. Take one down and pass it around, ${i - 1} bottles of milk on the wall.`
+      );
     }
   }
-
-  return newStr;
 }
-//Your code above ^^^
 
-console.log(sing());
+bottlesOfMilk();
