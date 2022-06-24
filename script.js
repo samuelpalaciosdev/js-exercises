@@ -1,60 +1,49 @@
-/* 
-# `23` Bottles of Milk 
+var person = {
+  name: 'John', //String
+  lastname: 'Doe',
+  age: 35, //Number
+  gender: 'male',
+  lucky_numbers: [7, 11, 13, 17], //Array
+  significant_other: person2, //Object, yes the same variable/object defined after
+};
 
-Have you heard the song about 99 bottles of milk? It is a great song - not boring at all... 😆 
+var person2 = {
+  name: 'Jane',
+  lastname: 'Doe',
+  age: 38,
+  gender: 'female',
+  lucky_numbers: [2, 4, 6, 8],
+  significant_other: person,
+};
 
-Here you can hear it: https://www.youtube.com/watch?v=Xy-da43E6Lo
+var person3 = {
+  name: 'Jimmy',
+  lastname: 'Doe',
+  age: 13,
+  gender: 'male',
+  lucky_numbers: [1, 2, 3, 4],
+  significant_other: null,
+};
 
-## 📝 Instructions:
+var family = {
+  lastname: 'Doe',
+  members: [person, person2, person3], //Array of objects, don't forget to add Jimmy
+};
 
-1. Write an algorithm to print the exact same lyrics. You must use a for loop.
-
-## Expected output:
-
-```js
-`99 bottles of milk on the wall, 99 bottles of milk.` 
-`Take one down and pass it around, 98 bottles of milk on the wall.`
-
-`98 bottles of milk on the wall, 98 bottles of milk.`
-`Take one down and pass it around, 97 bottles of milk on the wall.`
-
-...
-
-`1 bottle of milk on the wall, 1 bottle of milk.`
-`Take one down and pass it around, no more bottles of milk on the wall.`
-
-`No more bottles of milk on the wall, no more bottles of milk.` 
-`Go to the store and buy some more, 99 bottles of milk on the wall.`
-```
-
-## 💡 Hint:
-
-+ The lyrics change slightly when there is one bottle left (singular instead of plural).
-
-+ When there are no more bottles, the last verse changes to `go to the store and by some more`.
-
-*/
-
-function bottlesOfMilk() {
-  for (let i = 99; i >= 0; i--) {
-    if (i == 1) {
-      console.log(
-        `${i} bottle of milk on the wall, ${i} bottle of milk. Take one down and pass it around, no more bottles of milk on the wall.`
-      );
-    } else if (i == 0) {
-      console.log(
-        'No more bottles of milk on the wall, no more bottles of milk. Go to the store and buy some more, 99 bottles of milk on the wall.'
-      );
-    } else if (i == 2) {
-      console.log(
-        `${i} bottles of milk on the wall, ${i} bottles of milk. Take one down and pass it around, ${i - 1} bottle of milk on the wall.`
-      );
-    } else {
-      console.log(
-        `${i} bottles of milk on the wall, ${i} bottles of milk. Take one down and pass it around, ${i - 1} bottles of milk on the wall.`
-      );
+function addAllFamilyLuckyNumbers(anArray) {
+  var sumOfAllLuckyNumbers = 0; //sumOfAllLuckyNumbers is a number, the sum of all lucky numbers.
+  for (let i = 0; i < anArray.length; i++) {
+    for (let j = 0; j < anArray[i].lucky_numbers.length; j++) {
+      sumOfAllLuckyNumbers += anArray[i].lucky_numbers[j];
     }
   }
+  //To-Do: loop and add; consider nested loops
+  //Hint: use the anArray variable to get all of the lucky numbers
+
+  return sumOfAllLuckyNumbers;
 }
 
-bottlesOfMilk();
+person.lucky_numbers[3] = 33;
+
+//Do not make changes below:
+console.log(addAllFamilyLuckyNumbers(family.members));
