@@ -1,10 +1,7 @@
-// adding the function to the window makes it globally available
-window.calculateSumListener = function() {
-	//Return the value of the input #firstNumber
-	var stringA = parseInt(document.getElementById("firstNumber").value);
-	//Return the value of the input #secondNumber
-	var stringB = parseInt(document.getElementById("secondNumber").value);
-	let sum = stringA + stringB;
-	document.querySelector('#resultNumber').value = sum;
-	//your code goes here
-};
+let countries = ['USA', 'France', 'Italy', 'Brazil', 'Colombia', 'Belize', 'Venezuela'];
+
+const input = document.querySelector('#mySelect');
+
+for (let i = 0; i < countries.length; i++) {
+  input.innerHTML += `<option value="${i}">${countries[i]}</option>`;
+}
