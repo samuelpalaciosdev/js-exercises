@@ -13,6 +13,13 @@ const companies = [
 const ages = [33, 12, 20, 16, 5, 54, 21, 44, 61, 13, 15, 45, 25, 64, 32];
 
 //forEach
+
+// Iterates through each element of the array and console.log it
+
+companies.forEach((company) => {
+  console.log(company);
+});
+
 //filter
 //map
 //sort
